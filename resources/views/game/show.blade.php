@@ -52,14 +52,19 @@
             Разработчики
           </div>
           <div class="game-info__value">
-            FromSoftware
+            {{$game->developer}}
           </div>
         </div>
-
       </div>
 
-      <div class="game-control">
-        <button class="btn btn_red btn_big">Добавить в свой список</button>
+      <div class="game-controls">
+        <a class="btn btn_blue btn_big" href="#!">Добавить в свой список</a>
+        <a class="btn btn_yellow btn_big" href="{{route('game.edit', $game->id)}}">Редостировать</a>
+        <form action="{{route('game.delete', $game->id)}}" method="post">
+          @csrf
+          @method('delete')
+          <button type="submit" class="btn btn_red btn_big">Удалить</button>
+        </form>
       </div>
     </div>
   </div>
