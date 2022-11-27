@@ -56,6 +56,9 @@
                 <li class="user-menu__item _illumination">
                     <a href="{{route('game.create')}}" class="user-menu__link">Добавить игру</a>
                 </li>
+              <li class="user-menu__item _illumination">
+                    <a href="{{route('admin.index')}}" class="user-menu__link">Управление</a>
+                </li>
                 <li class="user-menu__item _illumination">
                     <a href="registration.html" class="user-menu__link">Регистрация</a>
                 </li>

@@ -7,21 +7,53 @@
   <form class="form" action="{{route('game.update', $game->id)}}" method="post">
     @csrf
     @method('patch')
+
+    <div class="form-control control">
+      <label for="gameTitle" class="form-control__name control__name">Название игры</label>
+      <input id="gameTitle" type="text" name="title" class="input">
+    </div>
+
     <div class="form-controls">
       <label class="form-control control">
-        <span class="form-control__name control__name">Название игры</span>
-        <input name="title" class="input" value="{{$game->title}}">
+        <label for="gameTitle" class="form-control__name control__name">Название игры</label>
+        <input id="gameTitle" type="text" name="title" class="input" value="{{$game->title}}">
       </label>
 
       <label class="form-control control">
-        <span class="form-control__name control__name">Описание</span>
-        <textarea class="input" name="description"  cols="30" rows="3">{{$game->description}}</textarea>
+        <label for="gameDescription" class="form-control__name control__name">Описание</label>
+        <textarea id="gameDescription" class="input" name="description"  cols="30" rows="3">{{$game->description}}</textarea>
       </label>
 
       <label class="form-control control">
-        <span class="form-control__name control__name">Разработчик</span>
-        <input name="developer" class="input" value="{{$game->developer}}">
+        <label for="gameDeveloper" class="form-control__name control__name">Разработчик</label>
+        <input id="gameDeveloper" name="developer" type="text" class="input" value="{{$game->developer}}">
       </label>
+    </div>
+
+    <div class="form-control control">
+      <span class="form-control__name control__name">Жанр</span>
+      <div data-select class="select">
+
+        <div data-select-top class="select__top">
+          <p data-select-title class="select__title select__title_inactive">Выбор жанра</p>
+        </div>
+        <div data-select-content="close" class="select__content">
+          <ul data-select-list class="select__list">
+            <li class="option">
+              <input data-select-input class="option__input" id="1" data-name="action" type="radio" name="genre"
+                     value="">
+              <label for="1" class="option__label">action</label>
+            </li>
+            <li class="option">
+              <input data-select-input class="option__input" id="2" data-name="action/RPG" type="radio" name="genre"
+                     value="">
+              <label for="2" class="option__label">action/RPG</label>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
     </div>
 
     <div class="form__bottom">

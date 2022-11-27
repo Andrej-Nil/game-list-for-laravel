@@ -15,6 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 
+Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
+
+
+Route::get('/admin/genres', [\App\Http\Controllers\GenreController::class, 'index'])->name('admin.genre.index');
+Route::get('/admin/genres/create', [\App\Http\Controllers\GenreController::class, 'create'])->name('admin.genre.create');
+Route::post('/admin/genres', [\App\Http\Controllers\GenreController::class, 'store'])->name('admin.genre.store');
+Route::get('/admin/genres/{genre}', [\App\Http\Controllers\GenreController::class, 'show'])->name('admin.genre.show');
+Route::get('/admin/genres/{genre}/edit', [\App\Http\Controllers\GenreController::class, 'edit'])->name('admin.genre.edit');
+Route::patch('/admin/genres/{genre}', [\App\Http\Controllers\GenreController::class, 'update'])->name('admin.genre.update');
+Route::delete('/admin/genres/{genre}', [\App\Http\Controllers\GenreController::class, 'destroy'])->name('admin.genre.delete');
+
 Route::get('/games', [\App\Http\Controllers\GameController::class, 'index'])->name('game.index');
 Route::get('/games/create', [\App\Http\Controllers\GameController::class, 'create'])->name('game.create');
 Route::post('/games', [\App\Http\Controllers\GameController::class, 'store'])->name('game.store');
@@ -22,6 +33,10 @@ Route::get('/games/{game}', [\App\Http\Controllers\GameController::class, 'show'
 Route::get('/games/{game}/edit', [\App\Http\Controllers\GameController::class, 'edit'])->name('game.edit');
 Route::patch('/games/{game}', [\App\Http\Controllers\GameController::class, 'update'])->name('game.update');
 Route::delete('/games/{game}', [\App\Http\Controllers\GameController::class, 'destroy'])->name('game.delete');
+
+
+
+
 //Route::get('/about', [\App\Http\Controllers\AboutController::class, 'index'])->name('about.index');
 //Route::get('/profile', [\App\Http\Controllers\GameController::class, 'index'])->name('profile.index');
 //Route::get('/game', [\App\Http\Controllers\GameController::class, 'index'])->name('game.index');
