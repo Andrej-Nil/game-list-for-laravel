@@ -13,14 +13,21 @@
       </label>
 
       <ul class="content__list list">
-        @foreach($genres as $genre)
+
+        @forelse($genres as $genre)
           <li class="list__row _dark-bg _shift">
             <a href="{{route('admin.genre.show', $genre->id)}}" class="list__item">
               {{$genre->title}}
             </a>
           </li>
-        @endforeach
-
+        @empty
+          <li class="list__row">
+            <p class="list__text"></p>
+            Ни одного жанра не существует! Для создания жанра передийте по ссылке <a class="link
+                      link_blue" href="{{route('admin.genre.create')}}">Добавить
+              жанр</a>
+          </li>
+        @endforelse
       </ul>
     </div>
     <div class="total">

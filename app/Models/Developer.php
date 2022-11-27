@@ -11,6 +11,6 @@ class Developer extends Model
     use HasFactory;
   use SoftDeletes;
 
-  protected $table = 'developer';
+  protected $table = 'developers';
   protected  $guarded = [];
 }

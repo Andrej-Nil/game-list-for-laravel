@@ -2,9 +2,11 @@
 
 @section('admin')
   <div class="content__title title-h4">Создание жанра</div>
-
+  <div class="content__controls">
+    <a class="btn btn_blue" href="{{route('admin.genre.index')}}">Назад</a>
+  </div>
   <div class="content__inner">
-    <form class="form" action="{{route('admin.genre.store')}}" method="POST">
+    <form class="content__form form" action="{{route('admin.genre.store')}}" method="POST">
       @csrf
       <div class="form-controls">
         <label class="form-control control">

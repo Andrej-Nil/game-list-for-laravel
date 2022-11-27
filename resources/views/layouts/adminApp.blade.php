@@ -6,7 +6,7 @@
       <h2 class="sidebar__title">Управление</h2>
       <ul class="list">
         <li class="list__row _dark-bg _shift">
-          <a href="admin-create-item-list-page.html" class="list__item">
+          <a href="{{route('admin.developer.index')}}" class="list__item">
             Разработчики
           </a>
         </li>

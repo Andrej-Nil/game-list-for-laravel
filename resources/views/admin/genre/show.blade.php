@@ -4,6 +4,7 @@
   <div class="content__title title-h4 title_m">Просмотр жанра</div>
 
   <div class="content__controls">
+    <a class="btn btn_blue" href="{{route('admin.genre.index')}}">Жанры</a>
     <a class="btn btn_yellow" href="{{route('admin.genre.edit', $genre->id)}}">Редостировать</a>
 
     <form action="{{route('admin.genre.delete', $genre->id)}}" method="post">

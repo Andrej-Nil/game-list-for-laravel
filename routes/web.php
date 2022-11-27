@@ -26,6 +26,16 @@ Route::get('/admin/genres/{genre}/edit', [\App\Http\Controllers\GenreController:
 Route::patch('/admin/genres/{genre}', [\App\Http\Controllers\GenreController::class, 'update'])->name('admin.genre.update');
 Route::delete('/admin/genres/{genre}', [\App\Http\Controllers\GenreController::class, 'destroy'])->name('admin.genre.delete');
 
+Route::get('/admin/developers', [\App\Http\Controllers\DeveloperController::class, 'index'])->name('admin.developer.index');
+Route::get('/admin/developers/create', [\App\Http\Controllers\DeveloperController::class, 'create'])->name('admin.developer.create');
+Route::post('/admin/developers', [\App\Http\Controllers\DeveloperController::class, 'store'])->name('admin.developer.store');
+Route::get('/admin/developers/{developer}', [\App\Http\Controllers\DeveloperController::class, 'show'])->name('admin.developer.show');
+Route::get('/admin/developers/{developer}/edit', [\App\Http\Controllers\DeveloperController::class, 'edit'])->name('admin.developer.edit');
+Route::patch('/admin/developers/{developer}', [\App\Http\Controllers\DeveloperController::class, 'update'])->name('admin.developer.update');
+Route::delete('/admin/developers/{developer}', [\App\Http\Controllers\DeveloperController::class, 'destroy'])->name('admin.developer.delete');
+
+
+
 Route::get('/games', [\App\Http\Controllers\GameController::class, 'index'])->name('game.index');
 Route::get('/games/create', [\App\Http\Controllers\GameController::class, 'create'])->name('game.create');
 Route::post('/games', [\App\Http\Controllers\GameController::class, 'store'])->name('game.store');
