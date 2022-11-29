@@ -2,61 +2,92 @@
 
 @section('content')
   <div class="form-container">
-  <h1 class="main-title">Создание игры</h1>
+    <h1 class="main-title">Создание игры</h1>
 
-  <form class="form" action="{{route('game.store')}}" method="post">
-    @csrf
-    <div class="form-controls">
-      <div class="form-control control">
-        <label for="gameTitle" class="form-control__name control__name">Название игры</label>
-        <input id="gameTitle" type="text" name="title" class="input input_bd">
-      </div>
+    <form class="form" action="{{route('game.store')}}" method="post">
+      @csrf
+      <div class="form-controls">
+        <div class="form-control control">
+          <label for="gameTitle" class="form-control__name control__name">Название игры</label>
+          <input id="gameTitle" type="text" name="title" class="input input_bd">
+        </div>
 
-      <div class="form-control control">
-        <label for="gameDescription" class="form-control__name control__name">Описание</label>
-        <textarea id="gameDescription" class="input input_bd" name="description"  cols="30" rows="3"></textarea>
-      </div>
+        <div class="form-control control">
+          <label for="gameDescription" class="form-control__name control__name">Описание</label>
+          <textarea id="gameDescription" class="input input_bd" name="description" cols="30" rows="3"></textarea>
+        </div>
 
-      <div class="form-control control">
-        <label for="gameDeveloper" class="form-control__name control__name">Разработчик</label>
-        <input id="gameDeveloper" name="developer" type="text" class="input input_bd">
-      </div>
+{{--        <div class="form-control control">--}}
+{{--          <label for="gameDeveloper" class="form-control__name control__name">Разработчик</label>--}}
+{{--          <input id="gameDeveloper" name="developer" type="text" class="input input_bd">--}}
+{{--        </div>--}}
 
-      <div class="form-control control">
-        <span class="form-control__name control__name">Жанр</span>
-        <div data-select class="select">
+        <div class="form-control control">
+          <span class="form-control__name control__name">Жанр</span>
+          <div data-select class="select">
 
-          <div data-select-top class="select__top input_bd">
-            <p data-select-title class="select__title select__title_inactive">Выбор жанра</p>
-          </div>
-          <div data-select-content="close" class="select__content">
+            <div data-select-top class="select__top input_bd">
+              <p data-select-title class="select__title select__title_inactive">Выбор разработчика</p>
+            </div>
+            <div data-select-content="close" class="select__content">
 
+              <ul data-select-list class="select__list">
 
-            <ul data-select-list class="select__list">
-              @forelse($genres as $genre)
-              <li class="option">
-                <input data-select-input class="option__input" id="{{"genre-$genre->id"}}"
-                       data-name="{{$genre->title}}"
-                       type="radio"
-                       name="genre"
-                       value="{{$genre->id}}">
-                <label for="{{"genre-$genre->id"}}" class="option__label">{{$genre->title}}</label>
-              </li>
-              @empty
+                @forelse($developers as $developer)
+                  <li class="option">
+                    <input data-select-input class="option__input" id="{{"developers-$developer->id"}}"
+                           data-name="{{$developer->title}}"
+                           type="radio"
+                           name="developer"
+                           value="{{$developer->id}}">
+                    <label for="{{"developers-$developer->id"}}" class="option__label">{{$developer->title}}</label>
+                  </li>
+                @empty
 
-              @endforelse
-            </ul>
+                @endforelse
+              </ul>
+            </div>
+
           </div>
 
         </div>
 
+        <div class="form-control control">
+          <span class="form-control__name control__name">Жанр</span>
+          <div data-select="multiselect" class="select">
+
+            <div data-select-top class="select__top input_bd">
+              <p data-select-title class="select__title select__title_inactive">Выбор жанра</p>
+            </div>
+            <div data-select-content="close" class="select__content">
+
+
+              <ul data-select-list class="select__list">
+
+                @forelse($genres as $genre)
+                  <li class="option">
+                    <input data-select-input class="option__input" id="{{"genre-$genre->id"}}"
+                           data-name="{{$genre->title}}"
+                           type="checkbox"
+                           name="genre[]"
+                           value="{{$genre->id}}">
+                    <label for="{{"genre-$genre->id"}}" class="option__label">{{$genre->title}}</label>
+                  </li>
+                @empty
+
+                @endforelse
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
       </div>
-    </div>
 
-    <div class="form__bottom">
-      <button type="submit" class="form__btn btn btn_blue btn_big">Добавить</button>
-    </div>
+      <div class="form__bottom">
+        <button type="submit" class="form__btn btn btn_blue btn_big">Добавить</button>
+      </div>
 
-  </form>
+    </form>
   </div>
 @endsection

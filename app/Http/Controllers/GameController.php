@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Developer;
 use App\Models\Game;
 use App\Models\Genre;
 use Illuminate\Http\Request;
@@ -19,15 +20,18 @@ class GameController extends Controller {
 
   public function create() {
     $genres = Genre::all();
-    return view('game.create', compact('genres'));
+    $developers = Developer::all();
+    return view('game.create', compact('genres', 'developers'));
   }
 
   public function store() {
     $data = request()->validate([
       'title' => 'string',
       'description' => 'string',
-      'developer' => 'string',
+      'developer' => '',
+      'genre' => 'array'
     ]);
+    dd($data);
     $game = Game::create($data);
     return redirect()->route('game.show',$game->id );
   }
