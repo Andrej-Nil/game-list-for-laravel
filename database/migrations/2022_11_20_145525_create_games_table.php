@@ -21,6 +21,7 @@ class CreateGamesTable extends Migration
             $table->timestamps();
             $table->softDeletes();
             $table->unsignedBigInteger('developer_id')->nullable();
+            $table->foreign('developer_id')->references('id')->on('developers')->onDelete('cascade');
         });
     }
 

@@ -28,7 +28,7 @@ class GameController extends Controller {
     $data = request()->validate([
       'title' => 'string',
       'description' => 'string',
-      'developer' => '',
+      'developer_id' => '',
       'genre' => 'array'
     ]);
     dd($data);

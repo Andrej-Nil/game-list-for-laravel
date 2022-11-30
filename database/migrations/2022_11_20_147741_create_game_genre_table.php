@@ -15,12 +15,13 @@ class CreateGameGenreTable extends Migration
     {
         Schema::create('game_genre', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('game_id');
+            $table->unsignedBigInteger('game_id')->default(0);
+            $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
             $table->unsignedBigInteger('genre_id');
+            $table->foreign('genre_id')->references('id')->on('genres')->onDelete('cascade');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
