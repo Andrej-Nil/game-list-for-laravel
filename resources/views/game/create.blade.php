@@ -16,6 +16,10 @@
           <label for="gameDescription" class="form-control__name control__name">Описание</label>
           <textarea id="gameDescription" class="input input_bd" name="description" cols="30" rows="3"></textarea>
         </div>
+        <div class="form-control control">
+          <label for="gameDescription" class="form-control__name control__name">Описание</label>
+          <textarea id="gameDescription" class="input input_bd" name="developer_new" cols="30" rows="3"></textarea>
+        </div>
 
 {{--        <div class="form-control control">--}}
 {{--          <label for="gameDeveloper" class="form-control__name control__name">Разработчик</label>--}}
@@ -23,7 +27,7 @@
 {{--        </div>--}}
 
         <div class="form-control control">
-          <span class="form-control__name control__name">Жанр</span>
+          <span class="form-control__name control__name">Разработчик</span>
           <div data-select class="select">
 
             <div data-select-top class="select__top input_bd">

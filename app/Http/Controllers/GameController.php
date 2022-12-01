@@ -31,7 +31,8 @@ class GameController extends Controller {
       'developer_id' => '',
       'genre' => 'array'
     ]);
-    dd($data);
+    $genres = Genre::whereIn('id', $data['genre'])->get();
+    dd( $genres);
     $game = Game::create($data);
     return redirect()->route('game.show',$game->id );
   }
