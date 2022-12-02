@@ -16,7 +16,7 @@ class CreateDevelopersTable extends Migration
         Schema::create('developers', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-          $table->text('description');
+            $table->text('description');
             $table->timestamps();
             $table->softDeletes();
         });

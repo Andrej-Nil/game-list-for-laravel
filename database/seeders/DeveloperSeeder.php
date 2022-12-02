@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Database\Seeders\DeveloperSeeder;
 use Illuminate\Support\Str;
 
 class DeveloperSeeder extends Seeder {
@@ -12,10 +13,16 @@ class DeveloperSeeder extends Seeder {
    *
    * @return void
    */
+
+
+ 
   public function run() {
-    DB::table('developers')->insert([
+    for($i = 0; $i<10; $i++){
+        DB::table('developers')->insert([
       'title' => Str::random(10),
       'description' => Str::random(10),
     ]);
   }
+    }
+  
 }

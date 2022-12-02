@@ -16,7 +16,6 @@ class Game extends Model
     protected $fillable = [
         'title',
         'description',
-       
         'developer_id'
     ];
 
