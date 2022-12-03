@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Developer;
 use App\Models\Game;
 use App\Models\Genre;
-use Illuminate\Http\Request;
 
 class GameController extends Controller {
   public function index() {
@@ -15,7 +14,9 @@ class GameController extends Controller {
 
   public function show($id) {
     $game = Game::findOrFail($id);
-    return view('game.show', compact('game'));
+    $developer = Game::find($game->developer_id)->developer;
+    $genres = Game::find($game->id)->genres;
+    return view('game.show', compact('game', 'developer', 'genres'));
   }
 
   public function create() {
@@ -28,12 +29,12 @@ class GameController extends Controller {
     $data = request()->validate([
       'title' => 'string',
       'description' => 'string',
-      'developer_id' => '',
+      'developer_id' => 'string',
       'genre' => 'array'
     ]);
     $genres = Genre::whereIn('id', $data['genre'])->get();
-    dd( $genres);
     $game = Game::create($data);
+    $game->genres()->attach($genres);
     return redirect()->route('game.show',$game->id );
   }
 

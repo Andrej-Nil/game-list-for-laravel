@@ -43,7 +43,9 @@
             Жанр
           </div>
           <div class="game-info__value">
-            action/RPG
+            @foreach($genres as $genre)
+              {{ $genre->title}}
+            @endforeach
           </div>
         </div>
 
@@ -52,7 +54,7 @@
             Разработчики
           </div>
           <div class="game-info__value">
-            {{$game->developer}}
+            {{$developer->title}}
           </div>
         </div>
       </div>

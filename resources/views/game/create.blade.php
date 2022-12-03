@@ -16,10 +16,6 @@
           <label for="gameDescription" class="form-control__name control__name">Описание</label>
           <textarea id="gameDescription" class="input input_bd" name="description" cols="30" rows="3"></textarea>
         </div>
-        <div class="form-control control">
-          <label for="gameDescription" class="form-control__name control__name">Описание</label>
-          <textarea id="gameDescription" class="input input_bd" name="developer_new" cols="30" rows="3"></textarea>
-        </div>
 
 {{--        <div class="form-control control">--}}
 {{--          <label for="gameDeveloper" class="form-control__name control__name">Разработчик</label>--}}
@@ -42,7 +38,7 @@
                     <input data-select-input class="option__input" id="{{"developers-$developer->id"}}"
                            data-name="{{$developer->title}}"
                            type="radio"
-                           name="developer"
+                           name="developer_id"
                            value="{{$developer->id}}">
                     <label for="{{"developers-$developer->id"}}" class="option__label">{{$developer->title}}</label>
                   </li>

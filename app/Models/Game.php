@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\Ganre;
 
 class Game extends Model
 {
@@ -20,7 +19,10 @@ class Game extends Model
     ];
 
     public function genres() {
-        return $this->belongsToMany(Genre::class);
+        return $this->belongsToMany(Genre::class, 'game_genre', 'game_id');
+    }
+    public function developer() {
+      return $this->hasOne(Developer::class, 'id');
     }
 
 }

@@ -3,8 +3,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Database\Seeders\GameSeeder;
 use Illuminate\Support\Str;
 use App\Models\Developer;
 use App\Models\Game;
@@ -19,7 +17,7 @@ class GameSeeder extends Seeder{
      */
     public function run(){
 
-        
+
         for($i = 0; $i<10; $i++){
             $developer = Developer::inRandomOrder()->first();
             $games = Game::create([
@@ -32,8 +30,8 @@ class GameSeeder extends Seeder{
             $genre = Genre::inRandomOrder()->limit(rand(1, $genreCount))->get();
             $games->genres()->attach($genre);
         }
-        
-      
+
+
     }
 }
 

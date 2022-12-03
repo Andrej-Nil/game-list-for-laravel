@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Database\Seeders\DeveloperSeeder;
 use Illuminate\Support\Str;
 
 class DeveloperSeeder extends Seeder {
@@ -15,7 +14,7 @@ class DeveloperSeeder extends Seeder {
    */
 
 
- 
+
   public function run() {
     for($i = 0; $i<10; $i++){
         DB::table('developers')->insert([
@@ -24,5 +23,5 @@ class DeveloperSeeder extends Seeder {
     ]);
   }
     }
-  
+
 }
