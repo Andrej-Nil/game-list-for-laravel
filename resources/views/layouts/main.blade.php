@@ -41,7 +41,7 @@
             </div>
 
           <div class="navigation__item _illumination">
-            <a class="navigation__link" href="">Жанры</a>
+            <a class="navigation__link" href="{{route('genre.index')}}">Жанры</a>
           </div>
 
           <div class="navigation__item _illumination">

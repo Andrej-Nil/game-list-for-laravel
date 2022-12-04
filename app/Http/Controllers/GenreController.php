@@ -24,7 +24,6 @@ class GenreController extends Controller {
       'title' => 'string',
       'description' => 'string',
     ]);
-//    dd($data);
     $genre = Genre::create($data);
     return redirect()->route('admin.genre.show', $genre->id );
   }
