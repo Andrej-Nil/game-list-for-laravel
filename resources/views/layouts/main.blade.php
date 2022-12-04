@@ -40,6 +40,14 @@
                 <a class="navigation__link" href="{{route('game.index')}}">Список игр</a>
             </div>
 
+          <div class="navigation__item _illumination">
+            <a class="navigation__link" href="">Жанры</a>
+          </div>
+
+          <div class="navigation__item _illumination">
+            <a class="navigation__link" href="">Разработчики</a>
+          </div>
+
             <div class="navigation__item _illumination">
                 <a class="navigation__link" href="about.html">О проекте</a>
             </div>

@@ -17,6 +17,9 @@ class CreateGamesTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
+            $table->integer('release_date');
+            $table->string('release_month');
+            $table->integer('release_year');
             $table->timestamps();
             $table->softDeletes();
             $table->unsignedBigInteger('developer_id')->nullable();

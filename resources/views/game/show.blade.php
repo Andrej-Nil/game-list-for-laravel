@@ -34,7 +34,7 @@
             Дата выхода
           </div>
           <div class="game-info__value">
-            22 сентября 2011
+            {{"$game->release_date $game->release_month $game->release_year"}}
           </div>
         </div>
 
