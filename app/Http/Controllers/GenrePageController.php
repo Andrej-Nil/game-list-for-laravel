@@ -6,7 +6,7 @@ use App\Models\Genre;
 
 class GenrePageController extends Controller {
   public function index() {
-    $genres = Genre::all();
+    $genres = Genre::with('randomGames')->paginate(20);
     return view('genre.index', compact('genres'));
   }
 

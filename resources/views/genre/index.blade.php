@@ -27,9 +27,11 @@
             <div class="card-recommend">
               <p class="card-recommend__label">Рекомендуем:</p>
               <div class="card-recommend__links">
-                <a href="" class="btn btn_blue">название игры</a>
-                <a href="" class="btn btn_blue">название игры</a>
-                <a href="" class="btn btn_blue">название игры</a>
+                @foreach( $genre->randomGames as $game)
+                  <a href="{{route('game.show', $game->id)}}" class="btn btn_blue">{{$game->title}}</a>
+                  @endforeach
+
+
               </div>
             </div>
           </div>

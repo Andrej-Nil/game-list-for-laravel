@@ -16,11 +16,11 @@ class GameSeeder extends Seeder
    *
    * @return void
    */
-  public function run()
+       public function run()
   {
 
 
-    for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; $i++) {
       $developer = Developer::inRandomOrder()->first();
       $games = Game::create([
         'title' => Str::random(10),
