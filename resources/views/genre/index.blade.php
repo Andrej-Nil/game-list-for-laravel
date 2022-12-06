@@ -27,7 +27,7 @@
             <div class="card-recommend">
               <p class="card-recommend__label">Рекомендуем:</p>
               <div class="card-recommend__links">
-                @foreach( $genre->randomGames as $game)
+                @foreach( $genre->gameRecommend as $game)
                   <a href="{{route('game.show', $game->id)}}" class="btn btn_blue">{{$game->title}}</a>
                   @endforeach
 
@@ -44,7 +44,7 @@
           </span>
           <div class="card-total">
             <p class="card-total__label">Всего игр:</p>
-            <p class="card-total__value">238</p>
+            <p class="card-total__value">{{$genre->games_count}}</p>
           </div>
         </a>
       </div>

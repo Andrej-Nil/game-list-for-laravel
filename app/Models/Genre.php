@@ -15,8 +15,8 @@ class Genre extends Model {
   public function games() {
     return $this->belongsToMany(Game::class);
 }
-
-  public function randomGames() {
-    return $this->belongsToMany(Game::class)->limit(3);
+  public function getGameRecommendAttribute() {
+    return $this->games()->limit(3)->get();
   }
+
 }
