@@ -7,9 +7,9 @@ use App\Models\Genre;
 
 class DeveloperPageController extends Controller {
   public function index() {
-//    $genres = Genre::with('games')->withCount('games')->paginate(20);
-
-    return view('developer.index', );
+    $developers = Genre::with('games')->withCount('games')->paginate(20);
+//dd($developers);
+    return view('developer.index', compact('developers'));
   }
 
 

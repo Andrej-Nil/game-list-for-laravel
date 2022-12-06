@@ -13,4 +13,13 @@ class Developer extends Model
 
   protected $table = 'developers';
   protected  $guarded = [];
+
+  public function games(){
+    return $this->belongsToMany(Game::class);
+  }
+
+  public function getGameRecommendAttribute() {
+    return $this->games()->limit(3)->get();
+  }
+
 }
