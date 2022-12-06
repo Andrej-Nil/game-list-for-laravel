@@ -45,6 +45,9 @@ Route::delete('/games/{game}', [\App\Http\Controllers\GameController::class, 'de
 Route::get('/genres', [\App\Http\Controllers\GenrePageController::class, 'index'])->name('genre.index');
 Route::get('/genres/{genre}', [\App\Http\Controllers\GenrePageController::class, 'show'])->name('genre.show');
 
+Route::get('/developers', [\App\Http\Controllers\DeveloperPageController::class, 'index'])->name('developer.index');
+Route::get('/developers/{developer}', [\App\Http\Controllers\DeveloperPageController::class, 'show'])->name('developer.show');
+
 
 //Route::get('/about', [\App\Http\Controllers\AboutController::class, 'index'])->name('about.index');
 //Route::get('/profile', [\App\Http\Controllers\GameController::class, 'index'])->name('profile.index');

@@ -45,7 +45,7 @@
           </div>
 
           <div class="navigation__item _illumination">
-            <a class="navigation__link" href="">Разработчики</a>
+            <a class="navigation__link" href="{{route('developer.index')}}">Разработчики</a>
           </div>
 
             <div class="navigation__item _illumination">
