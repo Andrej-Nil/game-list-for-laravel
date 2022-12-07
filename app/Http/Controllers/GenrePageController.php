@@ -14,9 +14,11 @@ class GenrePageController extends Controller {
 
 
   public function show($id) {
-    $genre = Genre::findOrFail($id);
+    $genre = Genre::with('games')->findOrFail($id);
 
     return view('genre.show', compact('genre'));
   }
+
+
 
 }

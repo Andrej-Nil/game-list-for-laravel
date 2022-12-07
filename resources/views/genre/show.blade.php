@@ -16,19 +16,20 @@
 
 
       <div class="main-card-info">
-
-        <div class="card-recommend">
-          <p class="card-recommend__label">Рекомендуем:</p>
-          <div class="card-recommend__links">
-            <a href="" class="btn btn_red">название игры</a>
-            <a href="" class="btn btn_red">название игры</a>
-            <a href="" class="btn btn_red">название игры</a>
+        @if(count($genre->gameRecommend))
+          <div class="card-recommend">
+            <p class="card-recommend__label">Рекомендуем:</p>
+            <div class="card-recommend__links">
+              @foreach($genre->gameRecommend as $game)
+                <a href="" class="btn btn_red">название игры</a>
+              @endforeach
+            </div>
           </div>
-        </div>
-
+        @endif
         <div class="main-card-controls">
-
-          <a href="" class="btn btn_blue">Все игры жанра шутер.</a>
+          @if(count($genre->gameRecommend))
+            <a href="" class="btn btn_blue">Все игры жанра шутер.</a>
+          @endif
         </div>
       </div>
 

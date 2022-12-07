@@ -24,16 +24,16 @@
           </p>
           <p class="card__desc">{{$genre->description}}</p>
           <div class="card__bottom">
+            @if(count($genre->gameRecommend))
             <div class="card-recommend">
               <p class="card-recommend__label">Рекомендуем:</p>
               <div class="card-recommend__links">
                 @foreach( $genre->gameRecommend as $game)
                   <a href="{{route('game.show', $game->id)}}" class="btn btn_blue">{{$game->title}}</a>
                   @endforeach
-
-
               </div>
             </div>
+            @endif
           </div>
         </div>
       </div>
