@@ -41,7 +41,15 @@ class GameController extends Controller {
 
 
   public function edit(Game $game) {
-    return view('game.edit', compact('game'));
+    $genres = Genre::all();
+    $gameGenres = Game::find($game->id)->genres;;
+    $developers = Developer::all();
+    return view('game.edit',
+      compact(
+        'game',
+        'genres',
+        'gameGenres',
+        'developers'));
   }
 
   public function update(Game $game) {
