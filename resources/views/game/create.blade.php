@@ -17,81 +17,10 @@
           <textarea id="gameDescription" class="input input_bd" name="description" cols="30" rows="3"></textarea>
         </div>
 
-
-        <div class="form-group">
-          <span class="form-control__name control__name">Дата выхода</span>
-          <div class="form-group__controls">
-
-            <div data-select class="select">
-              <div data-select-top class="select__top input_bd">
-                <p data-select-title class="select__title select__title_inactive">Число</p>
-              </div>
-
-              <div data-select-content="close" class="select__content">
-                <ul data-select-list class="select__list">
-                  @for($i = 1; $i <= 31; $i++)
-                    <li class="option">
-                      <input data-select-input class="option__input" id="{{"date-$i"}}"
-                             data-name="{{$i}}"
-                             type="radio"
-                             name="release_date"
-                             value="{{$i}}">
-                      <label for="{{"date-$i"}}" class="option__label">{{$i}}</label>
-                    </li>
-                  @endfor
-
-                </ul>
-              </div>
-
-            </div>
-            <div data-select class="select">
-              <div data-select-top class="select__top input_bd">
-                <p data-select-title class="select__title select__title_inactive">Месяц</p>
-              </div>
-
-              <div data-select-content="close" class="select__content">
-                <ul data-select-list class="select__list">
-                  @foreach($months as $month)
-                    <li class="option">
-                      <input data-select-input class="option__input" id="{{$month}}"
-                             data-name="{{$month}}"
-                             type="radio"
-                             name="release_month"
-                             value="{{$month}}">
-                      <label for="{{$month}}" class="option__label">{{$month}}</label>
-                    </li>
-                  @endforeach
-                </ul>
-              </div>
-            </div>
-
-            <div data-select class="select">
-              <div data-select-top class="select__top input_bd">
-                <p data-select-title class="select__title select__title_inactive">Год</p>
-              </div>
-
-              <div data-select-content="close" class="select__content">
-                <ul data-select-list class="select__list">
-                  @for($i = 1940; $i <= $currentYear; $i++)
-                    <li class="option">
-                      <input data-select-input class="option__input" id="{{"year-$i"}}"
-                             data-name="{{$i}}"
-                             type="radio"
-                             name="release_year"
-                             value="{{$i}}">
-                      <label for="{{"year-$i"}}" class="option__label">{{$i}}</label>
-                    </li>
-                  @endfor
-                </ul>
-              </div>
-
-            </div>
-          </div>
+        <div class="form-control control">
+          <label for="gameData" class="form-control__name control__name">Дата выхода</label>
+          <input id="gameData" class="input input_bd" name="date" type="date">
         </div>
-        {{--        <div class="form-control control">--}}
-        {{--          <label for="gameDeveloper" class="form-control__name control__name">Разработчик</label>--}}
-        {{--          <input id="gameDeveloper" name="developer" type="text" class="input input_bd">--}}
-        {{--        </div>--}}
 
         <div class="form-control control">
           <span class="form-control__name control__name">Разработчик</span>

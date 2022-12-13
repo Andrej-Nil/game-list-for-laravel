@@ -34,7 +34,7 @@
             Дата выхода
           </div>
           <div class="main-card-info__value">
-            {{"$game->release_date $game->release_month $game->release_year"}}
+            {{"$game->date"}}
           </div>
         </div>
 

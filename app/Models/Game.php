@@ -16,9 +16,7 @@ class Game extends Model
     'title',
     'description',
     'developer_id',
-    'release_date',
-    'release_month',
-    'release_year',
+    'date'
   ];
 
   public function genres()

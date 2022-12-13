@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helper\DataHelper;
+use App\Http\Requests\StoreRequest;
 use App\Models\Developer;
 use App\Models\Game;
 use App\Models\Genre;
@@ -23,32 +24,17 @@ class GameController extends Controller {
   public function create() {
     $genres = Genre::all();
     $developers = Developer::all();
-    $currentYear = DataHelper::getCurrentDate();
-    $months =  DataHelper::getMonths();
     return view('game.create',
       compact(
         'genres',
-        'developers',
-        'months',
-        'currentYear'
+        'developers'
       )
     );
   }
 
-  public function store() {
-    $data = request()->validate([
-      'title' => 'string',
-      'description' => 'string',
-      'developer_id' => 'string',
-      'release_date' => 'integer',
-      'release_month' => 'string',
-      'release_year' => 'integer',
-      'genre' => 'array'
-    ]);
-
-//    dd($data);
-    $genres = Genre::whereIn('id', $data['genre'])->get();
-    $game = Game::create($data);
+  public function store(StoreRequest $request) {
+    $genres = Genre::whereIn('id', $request['genre'])->get();
+    $game = Game::create($request->all());
     $game->genres()->attach($genres);
     return redirect()->route('game.show',$game->id );
   }

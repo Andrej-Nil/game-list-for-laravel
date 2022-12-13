@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Developer;
+use App\Models\Game;
+use App\Models\Genre;
 use Illuminate\Database\Seeder;
 use Database\Seeders\DeveloperSeeder;
 use Database\Seeders\GenreSeeder;
@@ -18,13 +20,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-//        Developer::factory()->count(10);
-        $this->call([
-            DeveloperSeeder::class,
-            GenreSeeder::class,
-            GameSeeder::class
-        ]);
+      Developer::factory(20)->create();
+      $genre = Genre::factory(20)->create();
+      $Games = Game::factory(100)->create();
 
-        
+      foreach ($Games as $Game){
+        $genreId = $genre->random(3)->pluck('id');
+        $Game->genres()->attach( $genreId );
+      }
     }
 }

@@ -8,21 +8,24 @@
     @csrf
     @method('patch')
 
-    <div class="form-control control">
-      <label for="gameTitle" class="form-control__name control__name">Название игры</label>
-      <input id="gameTitle" type="text" name="title" class="input">
-    </div>
 
     <div class="form-controls">
-      <label class="form-control control">
-        <label for="gameTitle" class="form-control__name control__name">Название игры</label>
-        <input id="gameTitle" type="text" name="title" class="input" value="{{$game->title}}">
-      </label>
 
-      <label class="form-control control">
+      <div class="form-control control">
+        <label for="gameTitle" class="form-control__name control__name">Название игры</label>
+        <input id="gameTitle" type="text" name="title" class="input input_bd" value="{{$game->title}}">
+      </div>
+
+      <div class="form-control control">
         <label for="gameDescription" class="form-control__name control__name">Описание</label>
-        <textarea id="gameDescription" class="input" name="description"  cols="30" rows="3">{{$game->description}}</textarea>
-      </label>
+        <textarea id="gameDescription" class="input input_bd" name="description" cols="30" rows="3">{{$game->description}}</textarea>
+      </div>
+
+
+      <div class="form-control control">
+        <label for="gameData" class="form-control__name control__name">Дата выхода</label>
+        <input id="gameData" class="input input_bd" name="date" type="date" value="{{$game->date}}">
+      </div>
 
       <label class="form-control control">
         <label for="gameDeveloper" class="form-control__name control__name">Разработчик</label>
