@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Helper\DataHelper;
-use App\Http\Requests\StoreRequest;
+use App\Http\Requests\game\StoreRequest;
 use App\Models\Developer;
 use App\Models\Game;
 use App\Models\Genre;
@@ -39,7 +38,6 @@ class GameController extends Controller {
     return redirect()->route('game.show',$game->id );
   }
 
-
   public function edit(Game $game) {
     $genres = Genre::all();
     $gameGenres = Game::find($game->id)->genres;;
@@ -52,13 +50,11 @@ class GameController extends Controller {
         'developers'));
   }
 
-  public function update(Game $game) {
-    $data = request()->validate([
-      'title' => 'string',
-      'description' => 'string',
-      'developer' => 'string',
-    ]);
-    $game->update($data);
+  public function update(StoreRequest $request, Game $game) {
+    $genres = Genre::whereIn('id', $request['genre'])->get();
+    $game->update($request->all());
+    $game->genres()->delete();
+    $game->genres()->attach($genres);
     return redirect()->route('game.show', $game->id);
   }
 

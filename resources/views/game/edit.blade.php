@@ -73,7 +73,7 @@
           <div data-select="multiselect" class="select">
 
             <div data-select-top class="select__top input_bd">
-              <p data-select-title class="select__title select__title_inactive">Выбор жанра</p>
+              <p data-select-title class="select__title">Выборно {{count($gameGenres)}}</p>
             </div>
             <div data-select-content="close" class="select__content">
 
