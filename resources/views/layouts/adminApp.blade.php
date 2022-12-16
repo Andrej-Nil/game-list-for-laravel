@@ -15,6 +15,11 @@
             Жанры
           </a>
         </li>
+        <li class="list__row _dark-bg _shift">
+          <a href="{{route('admin.platform.index')}}" class="list__item">
+            Платформы
+          </a>
+        </li>
       </ul>
     </div>
     <div class="content">
