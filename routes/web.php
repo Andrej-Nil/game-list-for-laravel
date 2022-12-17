@@ -34,13 +34,13 @@ Route::get('/admin/developers/{developer}/edit', [\App\Http\Controllers\Develope
 Route::patch('/admin/developers/{developer}', [\App\Http\Controllers\DeveloperController::class, 'update'])->name('admin.developer.update');
 Route::delete('/admin/developers/{developer}', [\App\Http\Controllers\DeveloperController::class, 'destroy'])->name('admin.developer.delete');
 
-Route::get('/admin/platforms', [\App\Http\Controllers\PlatformsController::class, 'index'])->name('admin.platform.index');
-Route::get('/admin/platforms/create', [\App\Http\Controllers\PlatformsController::class, 'create'])->name('admin.platform.create');
-Route::post('/admin/platforms', [\App\Http\Controllers\PlatformsController::class, 'store'])->name('admin.platform.store');
-Route::get('/admin/platforms/{platform}', [\platformsApp\Http\Controllers\PlatformsController::class, 'show'])->name('admin.platform.show');
-Route::get('/admin/platforms/{platform}/edit', [\App\Http\Controllers\PlatformsController::class, 'edit'])->name('admin.platform.edit');
-Route::patch('/admin/platforms/{platform}', [\App\Http\Controllers\PlatformsController::class, 'update'])->name('admin.platform.update');
-Route::delete('/admin/platforms/{platform}', [\App\Http\Controllers\PlatformsController::class, 'destroy'])->name('admin.platform.delete');
+Route::get('/admin/platforms', [\App\Http\Controllers\PlatformController::class, 'index'])->name('admin.platform.index');
+Route::get('/admin/platforms/create', [\App\Http\Controllers\PlatformController::class, 'create'])->name('admin.platform.create');
+Route::post('/admin/platforms', [\App\Http\Controllers\PlatformController::class, 'store'])->name('admin.platform.store');
+Route::get('/admin/platforms/{platform}', [\App\Http\Controllers\PlatformController::class, 'show'])->name('admin.platform.show');
+Route::get('/admin/platforms/{platform}/edit', [\App\Http\Controllers\PlatformController::class, 'edit'])->name('admin.platform.edit');
+Route::patch('/admin/platforms/{platform}', [\App\Http\Controllers\PlatformController::class, 'update'])->name('admin.platform.update');
+Route::delete('/admin/platforms/{platform}', [\App\Http\Controllers\PlatformController::class, 'destroy'])->name('admin.platform.delete');
 
 
 
@@ -58,6 +58,9 @@ Route::get('/genres/{genre}', [\App\Http\Controllers\GenrePageController::class,
 Route::get('/developers', [\App\Http\Controllers\DeveloperPageController::class, 'index'])->name('developer.index');
 Route::get('/developers/{developer}', [\App\Http\Controllers\DeveloperPageController::class, 'show'])->name('developer.show');
 
+
+Route::get('/platforms', [\App\Http\Controllers\PlatformPageController::class, 'index'])->name('platform.index');
+Route::get('/platforms/{platform}', [\App\Http\Controllers\PlatformPageController::class, 'show'])->name('platform.show');
 
 //Route::get('/about', [\App\Http\Controllers\AboutController::class, 'index'])->name('about.index');
 //Route::get('/profile', [\App\Http\Controllers\GameController::class, 'index'])->name('profile.index');

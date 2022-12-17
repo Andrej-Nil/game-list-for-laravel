@@ -7,7 +7,7 @@
   </div>
   <div class="content__inner">
     <div class="content__main">
-      <label class="form-control control">
+      <label class="content__search form-control control">
         <span class="form-control__name control__name">Поиск</span>
         <input class="input input_bd">
       </label>
@@ -22,10 +22,12 @@
           </li>
         @empty
           <li class="list__row">
-            <p class="list__text"></p>
-            Ни одного жанра не существует! Для создания жанра передийте по ссылке <a class="link
+            <p class="list__text">
+              Ни одного жанра не существует! Для создания жанра передийте по ссылке <a class="link
                       link_blue" href="{{route('admin.genre.create')}}">Добавить
-              жанр</a>
+                жанр</a>
+            </p>
+
           </li>
         @endforelse
       </ul>

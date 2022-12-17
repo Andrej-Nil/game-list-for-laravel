@@ -21,10 +21,12 @@
           </li>
         @empty
           <li class="list__row">
-            <p class="list__text"></p>
-            Ни одного разработчика не существует! Для создания разработчика передийте по ссылке <a class="link
-            link_blue"                                                                           href="{{route('admin.developer.create')}}">Добавить
-              разработчика</a>
+            <p class="list__text">
+              Ни одного разработчика не существует! Для создания разработчика передийте по ссылке <a class="link
+            link_blue" href="{{route('admin.developer.create')}}">Добавить
+                разработчика</a>
+            </p>
+
           </li>
         @endforelse
       </ul>

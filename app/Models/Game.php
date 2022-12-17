@@ -29,4 +29,9 @@ class Game extends Model
     return $this->hasOne(Developer::class, 'id');
   }
 
+  public function platforms()
+  {
+    return $this->belongsToMany(Platform::class, 'game_platform', 'game_id');
+  }
+
 }

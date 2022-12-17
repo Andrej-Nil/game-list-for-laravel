@@ -47,6 +47,9 @@
           <div class="navigation__item _illumination">
             <a class="navigation__link" href="{{route('developer.index')}}">Разработчики</a>
           </div>
+          <div class="navigation__item _illumination">
+            <a class="navigation__link" href="{{route('platform.index')}}">Платформы</a>
+          </div>
 
             <div class="navigation__item _illumination">
                 <a class="navigation__link" href="about.html">О проекте</a>
