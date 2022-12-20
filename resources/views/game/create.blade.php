@@ -82,6 +82,37 @@
           </div>
 
         </div>
+
+        <div class="form-control control">
+          <span class="form-control__name control__name">Платформы</span>
+          <div data-select="multiselect" class="select">
+
+            <div data-select-top class="select__top input_bd">
+              <p data-select-title class="select__title select__title_inactive">Выбор платформ</p>
+            </div>
+            <div data-select-content="close" class="select__content">
+
+
+              <ul data-select-list class="select__list">
+
+                @forelse($platforms as $platform)
+                  <li class="option">
+                    <input data-select-input class="option__input" id="{{"platform-$platform->id"}}"
+                           data-name="{{ $platform->title}}"
+                           type="checkbox"
+                           name="platform[]"
+                           value="{{$platform->id}}">
+                    <label for="{{"platform-$platform->id"}}" class="option__label">{{$platform->title}}</label>
+                  </li>
+                @empty
+
+                @endforelse
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
       </div>
 
       <div class="form__bottom">

@@ -12,7 +12,10 @@ class Developer extends Model
   use SoftDeletes;
 
   protected $table = 'developers';
-  protected  $guarded = [];
+  protected $fillable = [
+    'title',
+    'description'
+  ];
 
   public function games(){
     return $this->hasMany(Game::class);

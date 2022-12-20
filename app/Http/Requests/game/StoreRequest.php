@@ -28,7 +28,8 @@ class StoreRequest extends FormRequest
           'description' => 'string',
           'developer_id' => 'string',
           'date' => 'date_format:Y-m-d',
-          'genre' => 'array'
+          'genre' => 'array',
+          'platform' => 'array'
         ];
     }
 }

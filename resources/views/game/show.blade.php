@@ -57,7 +57,20 @@
             {{$developer->title}}
           </div>
         </div>
+
+        <div class="main-card-info__row">
+          <div class="main-card-info__label">
+            Платформы
+          </div>
+          <div class="main-card-info__value">
+            @foreach($platforms as $platform)
+              {{$platform->title}}
+            @endforeach
+          </div>
+        </div>
       </div>
+
+
 
       <div class="main-card-controls">
         <a class="btn btn_blue btn_big" href="#!">Добавить в свой список</a>

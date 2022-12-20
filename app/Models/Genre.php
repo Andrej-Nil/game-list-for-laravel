@@ -10,7 +10,10 @@ class Genre extends Model {
   use SoftDeletes;
 
   protected $table = 'genres';
-  protected $guarded = [];
+  protected $fillable = [
+    'title',
+    'description'
+  ];
 
   public function games() {
     return $this->belongsToMany(Game::class);
