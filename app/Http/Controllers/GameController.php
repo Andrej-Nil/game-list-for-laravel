@@ -48,11 +48,9 @@ class GameController extends Controller
 
   public function store(StoreRequest $request)
   {
-    $genres = Genre::whereIn('id', $request['genre'])->get();
-    $platforms = Platform::whereIn('id', $request['platform'])->get();
     $game = Game::create($request->all());
-    $game->platforms()->attach($platforms);
-    $game->genres()->attach($genres);
+    $game->platforms()->attach($request->platform);
+    $game->genres()->attach($request->genre);
     return redirect()->route('game.show', $game->id);
   }
 
@@ -76,14 +74,10 @@ class GameController extends Controller
 
   public function update(StoreRequest $request, Game $game)
   {
-    $genres = Genre::whereIn('id', $request['genre'])->get();
-    $platforms = Platform::whereIn('id', $request['platform'])->get();
-    $game->update($request->all());
-    $game->genres()->delete();
-    $game->genres()->attach($genres);
 
-//    $game->platforms()->delete();
-//    $game->platforms()->attach($platforms);
+    $game->update($request->all());
+    $game->genres()->sync($request->genre);
+    $game->platforms()->sync($request->platform);
     return redirect()->route('game.show', $game->id);
   }
 
